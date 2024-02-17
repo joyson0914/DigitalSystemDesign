@@ -1,15 +1,15 @@
-Lab 4: Hex Calculator
+# Lab 4: Hex Calculator
 
-    Program the FPGA on the Nexys A7-100T board to function as a simple hexadecimal calculator capable of adding and subtracting four-digit hexadecimal numbers using a 16-button keypad module (Pmod KYPD) connected to the Pmod port JA (See Section 10 of the Reference Manual) directly or via an optional 2x6-pin cable with three dots (or VDD/GND) facing up on both ends
+- Program the FPGA on the Nexys A7-100T board to function as a simple hexadecimal calculator capable of adding and subtracting four-digit hexadecimal numbers using a 16-button keypad module (Pmod KYPD) connected to the Pmod port JA (See Section 10 of the Reference Manual) directly or via an optional 2x6-pin cable with three dots (or VDD/GND) facing up on both ends
     
 ![kypd](https://github.com/joyson0914/DigitalSystemDesign/assets/98338109/bdf51263-6480-4041-9faf-8abee6ed7a8b)
 
 
-    The top level source module is called hexcalc that
-        Creates an instance of the keypad interface and 7-segment decoder interface modules
-        Make connection to the display, buttons, and external keypad
-        Has a timing process to generate clock signals for the keypad, display multiplexer, and finite-state machine
-        Implements a finite-state machine for the operations of the calculator in response to button pushes
+- The top level source module is called hexcalc that
+-     Creates an instance of the keypad interface and 7-segment decoder interface modules
+-     Make connection to the display, buttons, and external keypad
+-     Has a timing process to generate clock signals for the keypad, display multiplexer, and finite-state machine
+-     Implements a finite-state machine for the operations of the calculator in response to button pushes
 
 hexcalc.png
 
