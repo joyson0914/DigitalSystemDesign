@@ -11,24 +11,25 @@
     - Has a timing process to generate clock signals for the keypad, display multiplexer, and finite-state machine
     - Implements a finite-state machine for the operations of the calculator in response to button pushes
 
-hexcalc.png
+![hexcalc](https://github.com/joyson0914/DigitalSystemDesign/assets/98338109/01eae09e-03cb-4bc7-80b2-3d0b873fa35b)
 
-    The finite-state machine uses a number of variables to keep track of the addition operation
-        The variable acc is an accumulator that holds the current summation result
-        The variable operand holds the value of the next operand that will be added to the accumulator
-        The variable display holds the value currently being displayed on the 7-segment displays
-        The variable pr_state is the current state of the finite-state machine
-    Depending on the current state, the machine will react to pushed keypad buttons or operation buttons to update variables, change the output, and select the next state
-        When the clear button is pushed, the machine enters the ENTER_ACC state
-            In this state the machine waits for a keypad button to be pushed
-            When a keypad button is pushed, the code adds the new digit to the 16-bit word in the accumulator and then waits in the ACC_RELEASE state for the button to be released
-            It then returns to the ENTER_ACC state to wait for the next digit
-        The process continues until the “+” button is pushed
-            The machine then enters the START_OP state where it waits for the first digit of the second operand
-            Once a keypad button has been pushed, it records the hex digit and then enters the OP_RELEASE state waiting for the keypad button to be released
-            Once released, the machine enters the ENTER_OP state where it continues to received operand digits each time a keypad button is pushed
-        The process continues until the user presses the “=’ button at which point it performs the addition and goes to the SHOW_RESULT state
-            Once in the SHOW_RESULT state, it shows the result of the addition and waits for a keypad button push to start a new calculation
+
+- The finite-state machine uses a number of variables to keep track of the addition operation
+    - The variable acc is an accumulator that holds the current summation result
+    - The variable operand holds the value of the next operand that will be added to the accumulator
+    - The variable display holds the value currently being displayed on the 7-segment displays
+    - The variable pr_state is the current state of the finite-state machine
+- Depending on the current state, the machine will react to pushed keypad buttons or operation buttons to update variables, change the output, and select the next state
+    - When the clear button is pushed, the machine enters the ENTER_ACC state
+        - In this state the machine waits for a keypad button to be pushed
+        - When a keypad button is pushed, the code adds the new digit to the 16-bit word in the accumulator and then waits in the ACC_RELEASE state for the button to be released
+        - It then returns to the ENTER_ACC state to wait for the next digit
+    - The process continues until the “+” button is pushed
+        - The machine then enters the START_OP state where it waits for the first digit of the second operand
+        - Once a keypad button has been pushed, it records the hex digit and then enters the OP_RELEASE state waiting for the keypad button to be released
+        - Once released, the machine enters the ENTER_OP state where it continues to received operand digits each time a keypad button is pushed
+    - The process continues until the user presses the “=’ button at which point it performs the addition and goes to the SHOW_RESULT state
+          - Once in the SHOW_RESULT state, it shows the result of the addition and waits for a keypad button push to start a new calculation
 
 1. Create a new RTL project hexcalc in Vivado Quick Start
 
