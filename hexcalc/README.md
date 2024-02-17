@@ -6,10 +6,10 @@
 
 
 - The top level source module is called hexcalc that
--     Creates an instance of the keypad interface and 7-segment decoder interface modules
--     Make connection to the display, buttons, and external keypad
--     Has a timing process to generate clock signals for the keypad, display multiplexer, and finite-state machine
--     Implements a finite-state machine for the operations of the calculator in response to button pushes
+    - Creates an instance of the keypad interface and 7-segment decoder interface modules
+    - Make connection to the display, buttons, and external keypad
+    - Has a timing process to generate clock signals for the keypad, display multiplexer, and finite-state machine
+    - Implements a finite-state machine for the operations of the calculator in response to button pushes
 
 hexcalc.png
 
